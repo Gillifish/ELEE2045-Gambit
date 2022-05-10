@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="CSS/index.css" />
+    <script src="scripts/generator.js"></script>
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <div class="gridContainer">
+      <div class="divLeft">
+        <div class="password-output-container">
+          <p class="pGen" id="pGen">Password</p>
+        </div>
+        <button class="generate" onclick="genRun()">Generate</button>
+      </div>
+      <script>
+        function genRun() {
+          document.getElementById("pGen").innerHTML = password_gen(
+            document.querySelector(".capital").checked,
+            document.querySelector(".number").checked,
+            document.querySelector(".special").checked,
+            10
+          );
+        }
+      </script>
+      <div class="divRight">
+        <p class="requirementText">Password Requirements</p>
+        <input
+          type="checkbox"
+          name="capital"
+          id="capital"
+          class="capital"
+        />Capital Letters
+        <br />
+        <input
+          type="checkbox"
+          name="number"
+          id="number"
+          class="number"
+        />Numbers <br />
+        <input
+          type="checkbox"
+          name="special"
+          id="special"
+          class="special"
+        />Special Characters
+        <br />
+      </div>
+    </div>
+  </body>
+</html>
